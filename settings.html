@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Newsreader:opsz,wght@6..72,400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#d0bcff",
+                      "surface": "#f9f9ff",
+                      "on-surface": "#121c2a",
+                      "on-error": "#ffffff",
+                      "primary": "#3525cd",
+                      "surface-bright": "#f9f9ff",
+                      "on-surface-variant": "#464555",
+                      "outline-variant": "#c7c4d8",
+                      "inverse-on-surface": "#ebf1ff",
+                      "on-tertiary-fixed": "#341100",
+                      "surface-container": "#e6eeff",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "on-secondary-container": "#fffbff",
+                      "tertiary": "#7b3300",
+                      "surface-container-low": "#eff3ff",
+                      "surface-variant": "#d9e3f7",
+                      "on-background": "#121c2a",
+                      "error": "#ba1a1a",
+                      "background": "#f9f9ff",
+                      "tertiary-fixed": "#ffdbca",
+                      "on-tertiary-container": "#ffd2bd",
+                      "inverse-primary": "#c3c0ff",
+                      "surface-dim": "#d0daef",
+                      "surface-container-highest": "#d9e3f7",
+                      "primary-fixed": "#e2dfff",
+                      "on-primary-fixed": "#0f0069",
+                      "secondary-container": "#8455ef",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "outline": "#777587",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#a04500",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#ffb690",
+                      "primary-container": "#4f46e5",
+                      "on-secondary-fixed": "#23005c",
+                      "surface-container-high": "#dee9fd",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "secondary-fixed": "#e9ddff",
+                      "on-primary-container": "#dad7ff",
+                      "secondary": "#6b38d4",
+                      "surface-tint": "#4d44e3",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#273140",
+                      "on-tertiary-fixed-variant": "#783200"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "max-width-discovery": "1440px",
+                      "unit": "4px",
+                      "margin-desktop": "48px",
+                      "gutter": "24px",
+                      "max-width-reader": "720px"
+              },
+              "fontFamily": {
+                      "reader-chapter": ["Newsreader"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "reader-body": ["Newsreader"],
+                      "ui-body": ["Inter"]
+              },
+              "fontSize": {
+                      "reader-chapter": ["36px", {"lineHeight": "1.2", "letterSpacing": "0", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "reader-body": ["20px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "ui-body": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-surface text-on-surface font-ui-body text-ui-body selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-100 shadow-[0_10px_20px_-5px_rgba(79,70,229,0.04)]">
+<div class="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-indigo-700">Readify AI</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 hover:text-indigo-600 transition-all duration-200" href="dashboard.html">Discover</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 hover:text-indigo-600 transition-all duration-200" href="library.html">Library</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 hover:text-indigo-600 transition-all duration-200" href="ai_assistant.html">AI Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50/50 rounded-full transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<a href="profile.html" class="p-2 text-indigo-600 hover:bg-slate-50/50 rounded-full transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</a>
+</div>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] w-64 border-r border-slate-100 bg-white p-4 gap-2 sticky top-16">
+<div class="mb-6 px-2 py-4">
+<h2 class="text-lg font-black text-indigo-700">Readify AI</h2>
+<p class="text-xs text-slate-500">Premium Reader</p>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-transform hover:translate-x-1 duration-200 active:scale-95" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-transform hover:translate-x-1 duration-200 active:scale-95" href="library.html">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Inter'] text-sm">My Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-transform hover:translate-x-1 duration-200 active:scale-95" href="ai_assistant.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-['Inter'] text-sm">AI Assistant</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg transition-transform hover:translate-x-1 duration-200 active:scale-95" href="profile.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Inter'] text-sm">Stats</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-indigo-50 text-indigo-700 rounded-lg font-semibold transition-transform hover:translate-x-1 duration-200 active:scale-95" href="settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-sm">Settings</span>
+</a>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-2 py-3 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>New Search</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area (Centric Column for Settings) -->
+<main class="flex-1 overflow-y-auto bg-surface-bright px-margin-mobile md:px-margin-desktop py-12">
+<div class="max-w-reader mx-auto">
+<header class="mb-12">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Settings</h1>
+<p class="text-on-surface-variant">Customize your reading experience and AI personalization.</p>
+</header>
+<div class="space-y-12">
+<!-- Theme Selection -->
+<section>
+<h3 class="font-label-sm text-label-sm text-primary mb-4 uppercase tracking-widest">Appearance</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<button class="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border-2 border-primary shadow-sm hover:translate-y-[-2px] transition-all">
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="light_mode">light_mode</span>
+<span class="font-medium">Light</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white/50 rounded-2xl border border-slate-200 text-slate-400 hover:bg-white hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="dark_mode">dark_mode</span>
+<span class="font-medium">Dark</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white/50 rounded-2xl border border-slate-200 text-slate-400 hover:bg-white hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="settings_brightness">settings_brightness</span>
+<span class="font-medium">System</span>
+</button>
+</div>
+</section>
+<!-- Reading Preferences -->
+<section class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+<h3 class="font-label-sm text-label-sm text-primary mb-6 uppercase tracking-widest">Reading Preferences</h3>
+<div class="space-y-8">
+<div>
+<label class="block text-sm font-semibold mb-4">Default Font Family</label>
+<div class="flex gap-4">
+<button class="flex-1 py-4 border-2 border-primary rounded-xl font-reader-body text-lg text-primary bg-primary/5">Serif (Classic)</button>
+<button class="flex-1 py-4 border border-slate-200 rounded-xl font-ui-body text-lg text-slate-600 hover:border-primary/40">Sans (Modern)</button>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="text-sm font-semibold">Text Size</label>
+<span class="text-primary font-bold">20px</span>
+</div>
+<input class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-primary" max="32" min="14" type="range" value="20"/>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>Compact</span>
+<span>Readable</span>
+<span>Comfort</span>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Personalization (Bento-style Cards) -->
+<section>
+<h3 class="font-label-sm text-label-sm text-primary mb-4 uppercase tracking-widest">AI &amp; Intelligence</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="summarize">summarize</span>
+</div>
+<span class="font-bold">Summary Detail</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Adjust how deep the AI dives when generating chapter insights.</p>
+</div>
+<div class="mt-6 flex bg-surface-container-low p-1 rounded-lg">
+<button class="flex-1 py-2 text-xs font-bold rounded-md bg-white shadow-sm text-primary">CONCISE</button>
+<button class="flex-1 py-2 text-xs font-bold rounded-md text-slate-500 hover:text-primary transition-colors">BALANCED</button>
+<button class="flex-1 py-2 text-xs font-bold rounded-md text-slate-500 hover:text-primary transition-colors">VERBOSE</button>
+</div>
+</div>
+<div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-fixed rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="font-bold">Auto-Insights</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Automatically generate key themes as you finish reading chapters.</p>
+</div>
+</div>
+</section>
+<!-- Account & Notifications -->
+<section class="space-y-4">
+<h3 class="font-label-sm text-label-sm text-primary mb-4 uppercase tracking-widest">Account &amp; Safety</h3>
+<div class="bg-white divide-y divide-slate-100 rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-slate-50">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a creative professional woman with a calm intellectual expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVWs-JOo7axToQR70DHZBKwke-OZBRIUUs9E-bUD0CkfIRwlrzL28D_MUQ8YXij85y3hklayweTd4IuVlzGyt1kO4AHqLB0A_MZXwpvgWom8iW0AybUFhP0a1tvsBlnQZzzgxQY29K5XMJZLEIeoMrJloB_cnZFwR0S5OmPFkOs8RKv6gIoAtZXr-FfIZG3OiNsQ1_kw-R3XY02F0I6mOheBrIK8-w5H1qefUrdxjWvmDoELKPau0RWssP9R6FQDOB36aKBrC1824"/>
+</div>
+<div>
+<p class="font-bold">Eleanor Vance</p>
+<p class="text-xs text-slate-500">Premium Member since 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500" data-icon="notifications_active">notifications_active</span>
+<span class="font-medium">Notification Preferences</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors cursor-pointer group text-error">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium">Log out of all devices</span>
+</div>
+<span class="material-symbols-outlined text-error/50" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-16 pt-8 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400 font-medium uppercase tracking-widest">
+<span>Readify AI v2.4.0</span>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="settings.html">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="settings.html">Terms of Service</a>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-3 px-6 pb-safe bg-white/80 backdrop-blur-lg border-t border-slate-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50 rounded-t-2xl">
+<a href="dashboard.html" class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</a>
+<a href="library.html" class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Library</span>
+</a>
+<a href="ai_assistant.html" class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">AI Assist</span>
+</a>
+<a href="profile.html" class="flex flex-col items-center justify-center text-indigo-600 active:scale-90">
+<span class="material-symbols-outlined" data-icon="person" data-weight="fill">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+    <script src="assets/js/main.js"></script>
+</body></html>

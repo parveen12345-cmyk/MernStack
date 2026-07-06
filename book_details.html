@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Details | Readify AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#d0bcff",
+                        "surface": "#f9f9ff",
+                        "on-surface": "#121c2a",
+                        "on-error": "#ffffff",
+                        "primary": "#3525cd",
+                        "surface-bright": "#f9f9ff",
+                        "on-surface-variant": "#464555",
+                        "outline-variant": "#c7c4d8",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-container": "#e6eeff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary": "#7b3300",
+                        "surface-container-low": "#eff3ff",
+                        "surface-variant": "#d9e3f7",
+                        "on-background": "#121c2a",
+                        "error": "#ba1a1a",
+                        "background": "#f9f9ff",
+                        "tertiary-fixed": "#ffdbca",
+                        "on-tertiary-container": "#ffd2bd",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-dim": "#d0daef",
+                        "surface-container-highest": "#d9e3f7",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary-fixed": "#0f0069",
+                        "secondary-container": "#8455ef",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline": "#777587",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#a04500",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "primary-container": "#4f46e5",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-container-high": "#dee9fd",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "secondary-fixed": "#e9ddff",
+                        "on-primary-container": "#dad7ff",
+                        "secondary": "#6b38d4",
+                        "surface-tint": "#4d44e3",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#273140",
+                        "on-tertiary-fixed-variant": "#783200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "max-width-discovery": "1440px",
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "max-width-reader": "720px"
+                    },
+                    "fontFamily": {
+                        "reader-chapter": ["Newsreader"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "reader-body": ["Newsreader"],
+                        "ui-body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "reader-chapter": ["36px", {"lineHeight": "1.2", "letterSpacing": "0", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "reader-body": ["20px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "ui-body": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-surface font-ui-body text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-100 shadow-[0_10px_20px_-5px_rgba(79,70,229,0.04)]">
+<div class="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-indigo-700">Readify AI</span>
+<div class="hidden md:flex gap-6">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-indigo-700 border-b-2 border-indigo-600 pb-1" href="dashboard.html">Discover</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 hover:text-indigo-600 transition-all duration-200" href="library.html">Library</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-500 hover:text-indigo-600 transition-all duration-200" href="ai_assistant.html">AI Insights</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-all">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-all">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<div class="flex flex-col lg:flex-row gap-12 mb-16 items-start">
+<!-- Book Cover -->
+<div class="w-full lg:w-[400px] flex-shrink-0">
+<div class="aspect-[2/3] w-full rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(53,37,205,0.15)] group relative">
+<img id="book-details-cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://via.placeholder.com/400x600?text=Readify+AI+Cover"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+</div>
+<!-- Book Primary Details -->
+<div class="flex-grow space-y-6">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">New Release</span>
+<div class="flex items-center text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1">4.9 (1,240 reviews)</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Loading Title...</h1>
+<p class="font-headline-md text-xl text-on-surface-variant italic">by Loading Author...</p>
+</div>
+<!-- Description -->
+<p id="book-description" class="text-slate-600 leading-relaxed text-base mt-4">Loading description...</p>
+<!-- Action Buttons -->
+<div class="flex flex-wrap gap-4 pt-6">
+<button id="read-now-btn" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-semibold flex items-center gap-3 hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">menu_book</span>
+                        Read Now
+                    </button>
+<button class="bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold flex items-center gap-3 hover:bg-primary/5 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">favorite</span>
+                        Add to Favorites
+                    </button>
+</div>
+</div>
+</div>
+<!-- Price Comparison Section -->
+<section class="mt-12 bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+<div class="px-8 py-6 border-b border-slate-50 flex justify-between items-center bg-slate-50/50">
+<h2 class="font-headline-md text-2xl text-on-surface">Price Comparison</h2>
+<span class="font-label-sm text-slate-500">Updated 5 mins ago</span>
+</div>
+<div class="divide-y divide-slate-100">
+<!-- Amazon -->
+<div class="px-8 py-6 flex items-center justify-between group hover:bg-slate-50/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white border border-slate-100 rounded-lg flex items-center justify-center p-2">
+<img alt="Amazon" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGcG3FeGkQwQ2EUgX3ZiTkPN7cjlZdJVd2cqQ9bcQM9KOF-3YrAkSKY9uoXwdaVFfu-Vu_I5wJYbwmrh9YlpRNAxZmmwsITLJ77YFEtpx3X9BwX-1HIpkivwcbQG1Q3oo9ECD4N0n18_evhIP_4AI2Ritt3YoV4F5kZS5JZtLM_7Z9BEBRZSdAkfKBo2-lnteL2SRAcNpUwHSN5WJEQjUK7vG9nS5WIOqIiQ_7eOKXsh4vYi1nrbFYaktFME95gvh0tZf9NouKx_0"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Amazon</p>
+<p class="text-xs text-on-surface-variant">Hardcover • Prime Shipping</p>
+</div>
+</div>
+<div class="flex items-center gap-8 text-right">
+<div>
+<p class="text-xl font-bold text-on-surface">₹799.00</p>
+<p class="text-xs text-error font-medium">Out of stock soon</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">View Deal</button>
+</div>
+</div>
+<!-- Flipkart -->
+<div class="px-8 py-6 flex items-center justify-between group hover:bg-slate-50/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white border border-slate-100 rounded-lg flex items-center justify-center p-2">
+<img alt="Flipkart" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9jhjUpdZL3U5DMqdOlh3Z7aQ8-KiNCjdzvCncIU70U3ZSnQmdHLPEfWkYF_tLegVrrTAqf32GCT1RFyas1uQ-WfRoiDOD8fZFFWdz0Q0HbqVi8ycKUp_J-Q3-qqnDP72hYD2p5cJfgTmgWLAvMOVlrZAxboyAojlXx8fEyZ2BknJfngX7PFd5XEYgTe0_sRoi2V7XRwOL-GllfuvI03JK2CuNRZ_wcXnCR40otqeRlCjthF5E7DJr__c3NuiN5U3z6eRk77IPLE4"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Flipkart</p>
+<p class="text-xs text-on-surface-variant">Paperback • Next day delivery</p>
+</div>
+</div>
+<div class="flex items-center gap-8 text-right">
+<div class="flex flex-col items-end">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1">Cheapest Option</span>
+<p class="text-xl font-bold text-on-surface">₹645.00</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">View Deal</button>
+</div>
+</div>
+<!-- Local Bookstores -->
+<div class="px-8 py-6 flex items-center justify-between group hover:bg-slate-50/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white border border-slate-100 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">storefront</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Local Bookstores</p>
+<p class="text-xs text-on-surface-variant">Available at Om Book Shop, Blossoms</p>
+</div>
+</div>
+<div class="flex items-center gap-8 text-right">
+<div>
+<p class="text-xl font-bold text-on-surface">₹850.00</p>
+<p class="text-xs text-on-surface-variant">Support local business</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Locate Store</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommendation Row (Discovery Pattern) -->
+<section class="mt-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-2xl text-on-surface">Readers also liked</h2>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-8 scrollbar-hide no-scrollbar">
+<!-- Book Card 1 -->
+<div class="flex-shrink-0 w-48 group">
+<div class="aspect-[2/3] w-full bg-slate-200 rounded-xl mb-3 overflow-hidden shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 transition-all">
+<img class="w-full h-full object-cover" data-alt="Modern book cover with geometric shapes and soft pastel colors representing abstract thinking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA19i-FgWFlAiYFxUlIVeohk1g_6w8wH0v2LCeko6MXlEBatm2Zgzfsk2xh_fpq1jZDBMk9rmmeZwp4z7awvmjr40dxyFyZqVwCO5ezULgwAMimQp6MF27W2gKyZ45rAu2awSf-1ICsnnVTBXJNk7VJL12GaEGr3AqtWi1M6faoWwvxcnXPu5B5YNxbYTDV69fxpfcJYh3Q6GW8ApYblgStjvk1MT0RnnLIP8y9qdVNlYuumAi2AdtMicveYBTWcSY7dTGX1OnLmTE"/>
+</div>
+<p class="font-medium text-sm text-on-surface line-clamp-1">Designing Thought</p>
+<p class="text-xs text-on-surface-variant">Elena Russo</p>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-shrink-0 w-48 group">
+<div class="aspect-[2/3] w-full bg-slate-200 rounded-xl mb-3 overflow-hidden shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 transition-all">
+<img class="w-full h-full object-cover" data-alt="Editorial style book cover with a simple sketch of a brain made of neural pathways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4jNgwi0RGRmh_EImZHQckvayMLs4ap6UakgMcAug2bHmmBp0u2iv029Ll8w1EuGOSPmgWyS6zX9zjCwNKZ3e-CJokDqN-DHC1LaSh5s2Y0BbmyG7ZR5dfEyipjcCoApbovBIE-70D_ss2vdPbP6_gS-JAxmkuUb_W-vfApq17Iao6snygfSX0EapLMzeMnYWpaKiXvQSdKid0qzRO0zMsadSeY2dwmsB-PEbmYTDJYXCe5APVJGSTXGTBA03ijl0nDIcwN157v8E"/>
+</div>
+<p class="font-medium text-sm text-on-surface line-clamp-1">Neural Flow</p>
+<p class="text-xs text-on-surface-variant">Dr. Aris Thorne</p>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-shrink-0 w-48 group">
+<div class="aspect-[2/3] w-full bg-slate-200 rounded-xl mb-3 overflow-hidden shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 transition-all">
+<img class="w-full h-full object-cover" data-alt="Dark aesthetic book cover with gold foil accents featuring a compass and library stacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADNXFQGceo7ENC2jfd0OrGOTuzLjGIBygjvWZvzS63B_RWoDW_4Nynd1GJw9bA5TQKVGJ8zSnvSccNesVAncgxBig1dlCWbY3xW06K_SyRg4lsWM8fUh2Cf9vO805I_cI_71fZdcjjpfbQRI9yldmO5qmcHp7LFZipIuOwIoQAr1Bheh0TYXld1tu3hQP74B-p6NQbqgtPHLjg3f0rq_UZo2_rDTrFcK3Td8Q8Wl-kKckaCsufEfT03sDSEnNvLwqWDYbtcRI7s4c"/>
+</div>
+<p class="font-medium text-sm text-on-surface line-clamp-1">The Curator's Way</p>
+<p class="text-xs text-on-surface-variant">Sarah Jenkins</p>
+</div>
+<!-- Book Card 4 -->
+<div class="flex-shrink-0 w-48 group">
+<div class="aspect-[2/3] w-full bg-slate-200 rounded-xl mb-3 overflow-hidden shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 transition-all">
+<img class="w-full h-full object-cover" data-alt="Bright minimal book cover with a single large white feather on a bright blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9VU7anvaVvUP2qXAr1BImWULd0OcADccr3aBbmc48K-47vMAQeKtFPBprWe5NIhu0AGOgWEwRESGEARKr_cArEg4qjlF48ZbF3w68XBHpTVI5AxCVq1Tavp5kBTSq3J_BqmLJVyQSHNiiaYOg_DarIgV9M0bkXuPJpYvJ6t56KqDIE_JIXNonGj88qLOt5SgpImD4jNaS2Giq3WlS7jOhX1-SLh9plmgWAllpU2ghaPualeU7N6MlqATpMO2tympEjyYu1cmbUGc"/>
+</div>
+<p class="font-medium text-sm text-on-surface line-clamp-1">Light Work</p>
+<p class="text-xs text-on-surface-variant">Marcus Aurel</p>
+</div>
+<!-- Book Card 5 -->
+<div class="flex-shrink-0 w-48 group">
+<div class="aspect-[2/3] w-full bg-slate-200 rounded-xl mb-3 overflow-hidden shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 transition-all">
+<img class="w-full h-full object-cover" data-alt="Abstract art book cover with vibrant oil paint strokes in shades of deep indigo and magenta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZGLoAueLK-E1LgtbOX3AQFaCaD-AxYTkbIq-LGNnf6-i2zmUS5J3Wex5NcObqiecSj_-CzpSHOOPSNlww89-CJ-lkPEIJADHxS9BFENHLpzgLZHa5wUD0CiOarTpuHkoTax6b4U9LUDH7hdetevN8NjS-WLH19dfE4ZfsY4p-NEKtY_Zv_r6ZOdLpc--bDskcnc009UociQNfKjy7FwTmxyC9SU1V4q8tIkzDHGi9ytWqYCUGsL9KwLvvLOBP2HB-Dmg2lXhcbw"/>
+</div>
+<p class="font-medium text-sm text-on-surface line-clamp-1">Creative Sync</p>
+<p class="text-xs text-on-surface-variant">Lila Chen</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-3 px-6 pb-safe bg-white/80 backdrop-blur-lg border-t border-slate-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50 rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">book</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">AI Assist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+    <script src="assets/js/main.js"></script>
+</body></html>

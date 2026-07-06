@@ -1,0 +1,58 @@
+{
+  "dreamJobList": [
+    {
+      "id": 1,
+      "title": "Software Engineer",
+      "category": "Technology",
+      "description": "Designs, develops, and maintains software applications.",
+      "requiredSkills": ["Programming", "Problem Solving", "Algorithms"],
+      "averageSalaryUSD": 110000,
+      "remoteFriendly": true
+    },
+    {
+      "id": 2,
+      "title": "Data Scientist",
+      "category": "Technology",
+      "description": "Analyzes data to extract insights and support decision-making.",
+      "requiredSkills": ["Python", "Statistics", "Machine Learning"],
+      "averageSalaryUSD": 120000,
+      "remoteFriendly": true
+    },
+    {
+      "id": 3,
+      "title": "Doctor",
+      "category": "Healthcare",
+      "description": "Diagnoses and treats illnesses to improve patient health.",
+      "requiredSkills": ["Medical Knowledge", "Communication", "Critical Thinking"],
+      "averageSalaryUSD": 150000,
+      "remoteFriendly": false
+    },
+    {
+      "id": 4,
+      "title": "Game Designer",
+      "category": "Creative",
+      "description": "Creates concepts, rules, and experiences for video games.",
+      "requiredSkills": ["Creativity", "Game Mechanics", "Storytelling"],
+      "averageSalaryUSD": 90000,
+      "remoteFriendly": true
+    },
+    {
+      "id": 5,
+      "title": "Entrepreneur",
+      "category": "Business",
+      "description": "Builds and manages businesses to solve problems and create value.",
+      "requiredSkills": ["Leadership", "Risk Management", "Strategic Thinking"],
+      "averageSalaryUSD": null,
+      "remoteFriendly": true
+    },
+    {
+      "id": 6,
+      "title": "Astronaut",
+      "category": "Science",
+      "description": "Explores space and conducts scientific experiments beyond Earth.",
+      "requiredSkills": ["Physics", "Engineering", "Physical Fitness"],
+      "averageSalaryUSD": 140000,
+      "remoteFriendly": false
+    }
+  ]
+}

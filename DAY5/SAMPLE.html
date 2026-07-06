@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>DOM Practice</title>
+<style>
+  .product-card { padding: 10px; margin: 5px; }
+  .menu li { list-style: none; padding: 5px; }
+  .highlight { background: yellow; }
+  .dark-mode { background: #222; color: white; }
+  .card { border: 1px solid #ccc; padding: 10px; margin: 5px; }
+  .swatch {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal {
+    background: white;
+    padding: 20px;
+    width: 300px;
+  }
+</style>
+</head>
+<body>
+
+<h1 id="header-title">Header</h1>
+
+<div class="product-card">Product 1</div>
+<div class="product-card">Product 2</div>
+
+<ul class="menu">
+  <li>Home</li>
+  <li>About</li>
+</ul>
+
+<div id="controls"></div>
+
+<div id="cart"></div>
+
+<img class="avatar" width="100" />
+
+<div class="article-body">
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <div>
+    <p>Nested (not affected)</p>
+  </div>
+</div>
+
+<button id="theme-toggle">Toggle Theme</button>
+
+<div class="card">
+  <button data-action="delete">Delete Card</button>
+</div>
+
+<hr />
+
+<!-- Todo List -->
+<input id="todo-input" />
+<button id="add-todo">Add</button>
+<ul id="todo-list"></ul>
+
+<hr />
+
+<!-- Event Delegation -->
+<ul id="users-list">
+  <li data-user-id="123">John</li>
+  <li data-user-id="456">Jane</li>
+</ul>
+
+<hr />
+
+<!-- Counter -->
+<button id="decrement">-1</button>
+<span id="count">0</span>
+<button id="increment">+1</button>
+
+<hr />
+
+<!-- Search -->
+<input id="search" placeholder="Search country" />
+<ul>
+  <li class="country">India</li>
+  <li class="country">Canada</li>
+  <li class="country">France</li>
+</ul>
+
+<hr />
+
+<!-- Color Picker -->
+<div class="swatch" data-color="#e74c3c" style="background:#e74c3c"></div>
+<div class="swatch" data-color="#3498db" style="background:#3498db"></div>
+<div class="swatch" data-color="#2ecc71" style="background:#2ecc71"></div>
+
+<hr />
+
+<!-- Sortable -->
+<ul id="sortable">
+  <li draggable="true">Item 1</li>
+  <li draggable="true">Item 2</li>
+  <li draggable="true">Item 3</li>
+</ul>
+
+<hr />
+
+<button id="open-modal">Open Modal</button>
+
+<script>
+/* Easy 1 */
+document.getElementById("header-title").textContent = "My Awesome Page";
+
+/* Easy 2 */
+document.querySelectorAll(".product-card").forEach(el => {
+  el.style.border = "2px solid red";
+});
+
+/* Easy 3 */
+document.querySelectorAll(".menu li").forEach(li => {
+  li.style.backgroundColor = "lightblue";
+});
+
+/* Easy 4 */
+const btn = document.createElement("button");
+btn.textContent = "Click me!";
+document.getElementById("controls").appendChild(btn);
+
+/* Medium 5 */
+const item = document.createElement("div");
+item.className = "item";
+item.innerHTML = `<span>Apple</span> <button>Remove</button>`;
+document.getElementById("cart").appendChild(item);
+
+/* Medium 6 */
+document.querySelector(".avatar").src =
+  "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d";
+
+/* Medium 7 */
+document.querySelectorAll(".article-body > p").forEach(p => {
+  p.classList.add("highlight");
+});
+
+/* Medium 8 */
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+/* Medium 9 */
+document.addEventListener("click", e => {
+  if (e.target.dataset.action === "delete") {
+    e.target.closest(".card").remove();
+  }
+});
+
+/* Medium-Hard 10 */
+document.getElementById("add-todo").onclick = () => {
+  const text = document.getElementById("todo-input").value;
+  if (!text) return;
+
+  const li = document.createElement("li");
+  li.innerHTML = `${text} <button>Delete</button>`;
+  document.getElementById("todo-list").appendChild(li);
+
+  li.querySelector("button").onclick = () => li.remove();
+};
+
+/* Hard 11 */
+document.getElementById("users-list").addEventListener("click", e => {
+  if (e.target.tagName === "LI") {
+    console.log("Clicked user ID:", e.target.dataset.userId);
+  }
+});
+
+/* Hard 12 */
+let count = 0;
+const countEl = document.getElementById("count");
+
+document.getElementById("increment").onclick = () => {
+  count++;
+  countEl.textContent = count;
+};
+
+document.getElementById("decrement").onclick = () => {
+  if (count > 0) count--;
+  countEl.textContent = count;
+};
+
+/* Hard 13 */
+document.getElementById("search").addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  document.querySelectorAll(".country").forEach(li => {
+    li.style.display = li.textContent.toLowerCase().includes(value)
+      ? ""
+      : "none";
+  });
+});
+
+/* Hard 14 */
+document.querySelectorAll(".swatch").forEach(swatch => {
+  swatch.onclick = () => {
+    document.body.style.backgroundColor = swatch.dataset.color;
+  };
+});
+
+/* Hard 15 */
+let dragged;
+document.querySelectorAll("#sortable li").forEach(li => {
+  li.addEventListener("dragstart", () => dragged = li);
+  li.addEventListener("dragover", e => e.preventDefault());
+  li.addEventListener("drop", () => {
+    const temp = li.textContent;
+    li.textContent = dragged.textContent;
+    dragged.textContent = temp;
+  });
+});
+
+/* Hard 16 */
+document.getElementById("open-modal").onclick = () => {
+  const overlay = document.createElement("div");
+  overlay.className = "modal-overlay";
+
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.innerHTML = `
+    <h3>Modal Title</h3>
+    <p>This is a modal</p>
+    <button id="close-modal">Close</button>
+  `;
+
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+
+  overlay.onclick = e => {
+    if (e.target === overlay) overlay.remove();
+  };
+
+  modal.querySelector("#close-modal").onclick = () => overlay.remove();
+};
+</script>
+<script src="objectandarray.js"></script>
+
+</body>
+</html>
